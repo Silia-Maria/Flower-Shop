@@ -20,6 +20,14 @@ a {
     font-style: italic;
 }
 
-.logo {
+.logo-color {
     color: #3c6e71;
+}
+
+.logo-color:hover {
+    color: #3c6e71;
+}
+
+a:hover {
+    color: black;
 }

@@ -1,12 +1,30 @@
 <div class="container">
     <div class="nav-bar-bg"></div>
     <!--Header-->
+
     <h1 class="text-center">Flowers</h1>
-    <div class="d-flex justify-content-center">
-        <a href="" class="me-2">Handtied bouquets</a>
-        <a href="" class="me-2">Dried flowers</a>
-        <a href="" class="me-2">Luxury flowers</a>
+    <div class="d-flex justify-content-center border-bottom border-dark pb-2">
+        <a class="me-3">Hand-tied bouquets</a>
+        <a class="me-3">Dried flowers</a>
+        <a>Luxury flowers</a>
     </div>
 
     <!--Flower Section-->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-3">
+        <div class="col" *ngFor="let flower of flowers, index as flowerId">
+            <div class="card h-100">
+                <img src="{{flower.img}}" alt="..." class="h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><a routerLink="/details{{flowerId}}" class="logo-color">{{flower.name}}</a></h5>
+                    <p class="card-text text-secondary">{{flower.type}}</p>
+                    <div class="d-flex justify-content-between">
+                        <p>{{flower.price | currency}}</p>
+                        <button class="my-button"><a href="">Send</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
