@@ -1,1 +1,28 @@
-<p>shopping-cart works!</p>
+<div class="container">
+    <div class="nav-bar-bg"></div>
+    <!--Order info-->
+
+
+    <div class="d-flex">
+        <img src="https://images.unsplash.com/photo-1560256608-43f0b6f7588e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" class="img-thumbnail" width="200">
+        <p>Nova</p>
+    </div>
+
+
+
+    <!--Recipient info-->
+    <div class="recipient-container text-center">
+        <h3>Delivery Details</h3>
+        <input type="text" placeholder="Recipient Name" class="mb-2">
+        <input type="text" placeholder="Recipient Address" class="mb-2">
+        <label for="" class="text-start">For delivery on
+        <input type="date" class="mb-2"></label>
+        <!--Order info-->
+        <div class="d-flex justify-content-center align-items-baseline">
+            <p class="text-secondary me-2">Order total</p>
+            <p class="me-2 fs-5">{{total | currency}}</p>
+            <p class="text-secondary">free delivery</p>
+        </div>
+        <button class="my-button">Send</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+input {
+    display: block;
+    padding: 1em 2em;
+    border: 1px solid black;
+    border-radius: 0;
+    outline: none;
+}
+
+label,
+input {
+    width: 100%;
+}
+
+.recipient-container {
+    width: 60%;
+    margin: 0 auto;
+}
