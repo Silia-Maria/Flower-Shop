@@ -1,9 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+/*---------------
+ anchor links 
+-----------------*/
+
 a {
     text-decoration: none;
     color: black;
 }
+
+a:hover {
+    color: black;
+}
+
+
+/*---------------
+butttons
+-----------------*/
 
 .my-button {
     background-color: #ffe5d9;
@@ -20,6 +34,11 @@ a {
     font-style: italic;
 }
 
+
+/*---------------
+Green color
+-----------------*/
+
 .logo-color {
     color: #3c6e71;
 }
@@ -28,6 +47,19 @@ a {
     color: #3c6e71;
 }
 
-a:hover {
-    color: black;
+
+/*---------------
+ Cards
+-----------------*/
+
+.card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-right: none !important;
+}
+
+.nav-bar-bg {
+    width: 100%;
+    height: 100px;
 }
