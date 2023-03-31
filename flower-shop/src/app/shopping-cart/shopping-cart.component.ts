@@ -15,7 +15,9 @@ export class ShoppingCartComponent implements OnInit {
  
 recipientInfo = new FormGroup ({
   name: new FormControl("", Validators.required),
-  address: new FormControl ("", Validators.required)
+  address: new FormControl ("", Validators.required),
+  deliveryDate: new FormControl ("", Validators.required),
+  message: new FormControl ("")
 }) 
   constructor(private cartService: CartService ) { }
 

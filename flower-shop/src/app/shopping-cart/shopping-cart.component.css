@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
     display: block;
     padding: 1em 2em;
     border: 1px solid black;
@@ -14,4 +15,9 @@ input {
 .recipient-container {
     width: 60%;
     margin: 0 auto;
+}
+
+.info,
+.gift {
+    width: 45%;
 }

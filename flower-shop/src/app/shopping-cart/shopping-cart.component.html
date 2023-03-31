@@ -1,28 +1,60 @@
-<div class="container">
+<div class="container mb-3">
     <div class="nav-bar-bg"></div>
     <!--Order info-->
 
 
-    <div class="d-flex">
-        <img src="https://images.unsplash.com/photo-1560256608-43f0b6f7588e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" class="img-thumbnail" width="200">
-        <p>Nova</p>
+    <div class="row row-cols-1 row-cols-md-2 justify-content-between">
+
+        <div class="col-4 text-center align-self-center">
+            <h5>The Nova</h5>
+            <p>price</p>
+        </div>
+        <div class="col-8 align-self-end">
+            <img src="https://images.unsplash.com/photo-1560256608-43f0b6f7588e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" class="cart-image" width="300" height="300">
+        </div>
     </div>
 
 
 
     <!--Recipient info-->
-    <div class="recipient-container text-center">
+    <div class="recipient-container text-center mt-3">
+
         <h3>Delivery Details</h3>
-        <input type="text" placeholder="Recipient Name" class="mb-2">
-        <input type="text" placeholder="Recipient Address" class="mb-2">
-        <label for="" class="text-start">For delivery on
-        <input type="date" class="mb-2"></label>
+        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Recipient Name" class="mb-2" formControlName="name">
+            <input type="text" placeholder="Recipient Address" class="mb-2" formControlName="address">
+            <label for="date" class="text-start">For delivery on
+        <input type="date" class="mb-2" formControlName="deliveryDate"></label>
+        </form>
+
+        <!--Gift Card-->
+
+        <h3>Order details</h3>
+        <p class="text-secondary">Include gift card (free) </p>
+        <div class="d-flex justify-content-center">
+            <div>
+
+                <img src="https://images.unsplash.com/photo-1585157603209-378be66bede1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80" alt="" width="200" class="img-thumbnail rounded-0 me-3">
+                <p>card cover</p>
+            </div>
+            <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
+                <textarea name="message" id="" cols="30" rows="9" formControlName="message"></textarea>
+                <p>card message:</p>
+            </form>
+
+        </div>
         <!--Order info-->
         <div class="d-flex justify-content-center align-items-baseline">
             <p class="text-secondary me-2">Order total</p>
             <p class="me-2 fs-5">{{total | currency}}</p>
             <p class="text-secondary">free delivery</p>
         </div>
-        <button class="my-button">Send</button>
+        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
+            <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()">Send</button>
+        </form>
+
+
+
     </div>
+
 </div>
