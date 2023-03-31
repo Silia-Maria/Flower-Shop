@@ -5,12 +5,12 @@
         <h3 class="flex-fill">{{flower.name}}</h3>
         <h5 class="align-self-center me-2 mb-0">Total: {{flower.price | currency}}</h5>
         <button class="my-button align-middle me-4">Send</button>
-        <a class="align-middle" routerLink="/flowers"><i class="fa-solid fa-x fs-3 align-self-center"></i></a>
+        <a class="back" routerLink="/flowers"><i class="fa-solid fa-x fs-3"></i></a>
     </div>
     <hr>
     <!--Content-->
     <div class="row row-cols-1 row-cols-lg-2">
-        <div class="left">
+        <div class="left mb-3">
             <img src="{{flower.img}}">
         </div>
         <div class="left">
@@ -20,7 +20,7 @@
             <p class="mb-5">{{flower.inside}}</p>
 
             <div class="d-flex">
-                <i class="bi-flower3 me-2 fs-3 "></i>
+                <i class="bi-flower3 me-2 fs-3 flower"></i>
                 <p> Arrives in bud. But bursts into life over 48 hours.</p>
             </div>
 
@@ -29,7 +29,7 @@
                 <p> Every stem is unique so sometimes colours vary or we'll need to use a substitution to give you the best bouquet!</p>
             </div>
             <div class="d-flex">
-                <i class="bi-flower3 me-2 fs-3"></i>
+                <i class="bi-flower3 me-2 fs-3 flower"></i>
                 <p> Sourced from trusted, responsible growers</p>
             </div>
             <div class="d-flex">
