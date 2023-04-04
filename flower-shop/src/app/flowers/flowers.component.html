@@ -2,24 +2,31 @@
     <div class="nav-bar-bg"></div>
     <!--Header-->
 
-    <h1 class="text-center">Flowers</h1>
-    <div class="d-flex justify-content-center border-bottom border-dark pb-2">
-        <a class="me-3">Hand-tied bouquets</a>
-        <a class="me-3">Dried flowers</a>
-        <a>Luxury flowers</a>
+    <h1 class="text-center"><a (click)="filter('')">Flowers</a></h1>
+    <div class="d-flex justify-content-center border-bottom border-dark pb-2 flower-filter">
+        <a class="me-3" (click)="filter('Hand-tied flowers')">Hand-tied bouquets</a>
+        <a class="me-3" (click)="filter('Dried flowers')">Dried flowers</a>
+        <a (click)="filter('Luxury flowers')">Luxury flowers</a>
     </div>
+
+    <!-- <h1 class="text-center"><a>Flowers</a></h1>
+    <div class="d-flex justify-content-center border-bottom border-dark pb-2 flower-filter">
+        <a class="me-3" (click)="filterFlowers('Hand-tied flowers')">Hand-tied bouquets</a>
+        <a class="me-3" (click)="filterFlowers('Dried flowers')">Dried flowers</a>
+        <a (click)="filterFlowers('Luxury flowers')">Luxury flowers</a>
+    </div> -->
 
     <!--Flower Section-->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-3">
-        <div class="col" *ngFor="let flower of flowers, index as flowerId">
+        <div class="col" *ngFor="let flower of filterType, index as flowerId">
             <div class="card h-100">
                 <img src="{{flower.img}}" alt="..." class="h-100">
                 <div class="card-body">
-                    <h5 class="card-title"><a routerLink="/details{{flowerId}}" class="logo-color">{{flower.name}}</a></h5>
+                    <h5 class="card-title"><a routerLink="/details/{{flowerId}}" class="logo-color">{{flower.name}}</a></h5>
                     <p class="card-text text-secondary">{{flower.type}}</p>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between align-items-baseline">
                         <p>{{flower.price | currency}}</p>
-                        <button class="my-button"><a href="">Send</a></button>
+                        <button class="my-button"><a routerLink="/cart" (click)="addToCart(flower)">Send</a></button>
                     </div>
                 </div>
             </div>
