@@ -1,3 +1,18 @@
+/* What's in the Cart */
+
+.cart-image {
+    object-fit: cover;
+}
+
+.price {
+    display: inline-block;
+    width: 15%;
+    border-bottom: 1px solid #3c6e71;
+}
+
+
+/* Recipient Info & personal Card */
+
 input,
 textarea {
     display: block;
