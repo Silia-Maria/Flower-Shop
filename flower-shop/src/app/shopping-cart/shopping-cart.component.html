@@ -1,86 +1,81 @@
 <div class="container mb-3">
     <div class="nav-bar-bg"></div>
     <!--Order info-->
+    <!--If Cart is empty-->
+    <div *ngIf="items.length === 0" class="text-center">
+        <img src="https://images.unsplash.com/photo-1630149462177-35a341b42fcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80" class="empty-cart">
+        <h3>Oops - your cart appears to be empty!</h3>
+        <p>Show someone you care and send them flowers</p>
+        <button class="my-button"><a href="">start shopping</a></button>
+    </div>
+    <!--If Cart is not empty-->
+    <div *ngIf="items.length > 0">
+        <div *ngFor="let item of items">
+            <div class="row  mb-2">
+                <div class="col-4 text-center align-self-center">
+                    <h5>{{item.name}}</h5>
+                    <p class="price py-2 text-center"><b>{{item.price*item.quantity | currency}}</b></p>
+                </div>
+                <div class="col-4 align-self-center text-center">
+                    <div class="d-flex justify-content-center mb-0">
+                        <a (click)="increaseItem(item)" class="align-self-center"><i class="bi bi-plus-lg me-3"></i></a>
+                        <span class="fs-3">{{item.quantity}}</span>
+                        <a (click)="decreaseItem(item)" class="align-self-center"><i class="bi bi-dash-lg ms-3"></i></a>
+                    </div>
+                    <p class="mt-0"><a (click)="removeItem(item)" class="text-danger">remove</a></p>
+                </div>
+                <div class="col-4 text-center">
+                    <img src="{{item.img}}" width="300" class="cart-image">
+                </div>
 
-    <div *ngFor="let item of items">
-        <div class="row  mb-2">
-            <div class="col-4 text-center align-self-center">
-                <h5>{{item.name}}</h5>
-                <p class="price py-2 text-center"><b>{{item.price*item.quantity | currency}}</b></p>
             </div>
-            <div class="col-4 align-self-center text-center">
-                <p class="mb-0">
-                    <a (click)="decreaseItem(item)"><i class="bi bi-dash-lg me-2 align-self-center"></i></a>
-                    <span class="fs-3">{{item.quantity}}</span>
-                    <a (click)="increaseItem(item)"><i class="bi bi-plus-lg ms-2"></i></a>
-                </p>
-                <p class="mt-0"><a (click)="removeItem(item)" class="text-danger">remove</a></p>
-            </div>
-            <div class="col-4 text-center">
-                <img src="{{item.img}}" width="300" class="cart-image">
-            </div>
-
+            <hr>
         </div>
-        <hr>
     </div>
 
-    <!-- <div class="row  mb-2">
-        <div class="col-4 text-center align-self-center">
-            <h5>nova</h5>
-            <p class="price py-2 text-center"><b>$ 40.00</b></p>
-        </div>
-        <div class="col-4 align-self-center text-center">
-            <p> quantity</p>
-            <p><a>delete</a></p>
-        </div>
-        <div class="col-4 text-center">
-            <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80" class="cart-image">
-        </div>
-
-    </div>
-    <hr> -->
-
-
+    <!-- Show only when something is in the cart-->
 
     <!--Recipient info-->
-    <div class="recipient-container text-center mt-3">
+    <div *ngIf="items.length > 0 ">
+        <div class="recipient-container text-center mt-3">
 
-        <h3>Delivery Details</h3>
-        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-            <input type="text" placeholder="Recipient Name" class="mb-2" formControlName="name">
-            <input type="text" placeholder="Recipient Address" class="mb-2" formControlName="address">
-            <label for="date" class="text-start">For delivery on
-        <input type="date" class="mb-2" formControlName="deliveryDate"></label>
-        </form>
-
-        <!--Gift Card-->
-
-        <h3>Order details</h3>
-        <p class="text-secondary">Include gift card (free) </p>
-        <div class="d-flex justify-content-center">
-            <div>
-
-                <img src="https://images.unsplash.com/photo-1585157603209-378be66bede1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80" alt="" width="200" class="img-thumbnail rounded-0 me-3">
-                <p>card cover</p>
-            </div>
+            <h3>Delivery Details</h3>
             <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-                <textarea name="message" id="" cols="30" rows="9" formControlName="message"></textarea>
-                <p>card message:</p>
+                <input type="text" placeholder="Recipient Name" class="mb-2" formControlName="name">
+                <input type="text" placeholder="Recipient Address" class="mb-2" formControlName="address">
+                <label for="date" class="text-start">For delivery on
+        <input type="date" class="mb-2" formControlName="deliveryDate"></label>
             </form>
 
+            <!--Gift Card-->
+
+            <h3>Order details</h3>
+            <p class="text-secondary">Include gift card (free) </p>
+            <div class="d-flex justify-content-center">
+                <div>
+
+                    <img src="https://images.unsplash.com/photo-1585157603209-378be66bede1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80" alt="" width="200" class="img-thumbnail rounded-0 me-3">
+                    <p>card cover</p>
+                </div>
+                <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
+                    <textarea name="message" id="" cols="30" rows="9" formControlName="message"></textarea>
+                    <p>card message:</p>
+                </form>
+
+            </div>
+            <!--Order info-->
+            <div class="d-flex justify-content-center align-items-baseline">
+                <p class="text-secondary me-2">Order total</p>
+                <p class="me-2 fs-5">{{total| currency}}</p>
+                <p class="text-secondary">free delivery</p>
+            </div>
+            <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
+                <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()">Send</button>
+            </form>
+
+
+
         </div>
-        <!--Order info-->
-        <div class="d-flex justify-content-center align-items-baseline">
-            <p class="text-secondary me-2">Order total</p>
-            <p class="me-2 fs-5">{{total| currency}}</p>
-            <p class="text-secondary">free delivery</p>
-        </div>
-        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-            <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()">Send</button>
-        </form>
-
-
-
     </div>
 
 </div>
