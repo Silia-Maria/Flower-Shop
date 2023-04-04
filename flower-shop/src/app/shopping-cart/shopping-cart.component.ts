@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Idflowers } from '../Idflowers';
 import { CartService } from '../cart.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -11,7 +12,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ShoppingCartComponent implements OnInit {
   items: Array<Idflowers> = [];
-  total: number = this.cartService.result();
+  get total(): number {
+    return this.cartService.result();
+  }
+
  
 recipientInfo = new FormGroup ({
   name: new FormControl("", Validators.required),
@@ -19,11 +23,33 @@ recipientInfo = new FormGroup ({
   deliveryDate: new FormControl ("", Validators.required),
   message: new FormControl ("")
 }) 
-  constructor(private cartService: CartService ) { }
+  constructor(private cartService: CartService, private cdr: ChangeDetectorRef ) { }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
   }
+
+  increaseItem(item: Idflowers) {
+    item.quantity++;
+    this.cartService.updateQuantity(item, item.quantity);
+    this.cdr.detectChanges();
+  }
+
+  decreaseItem(item: Idflowers) {
+    if(item.quantity > 1) {
+      item.quantity--;
+      this.cartService.updateQuantity(item, item.quantity);
+      this.cdr.detectChanges();
+    }
+  }
+
+  removeItem (item: Idflowers) {
+    const index = this.items.indexOf(item);
+    if(index !== -1) {
+      this.items.splice(index,1);
+    }
+  }
+  
 
  onSubmit () {
   if(this.recipientInfo.valid) {
@@ -33,10 +59,9 @@ recipientInfo = new FormGroup ({
   }
  }
 
- orderSent () {
-  window.alert("Your Order was successfull!");
+
+orderSent () {
   this.recipientInfo.reset;
-  this.total = 0;
-  this.items = [];
- }
+  this.cartService.clearCart();
+}
 }

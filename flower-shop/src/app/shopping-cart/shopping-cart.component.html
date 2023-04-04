@@ -2,16 +2,43 @@
     <div class="nav-bar-bg"></div>
     <!--Order info-->
 
+    <div *ngFor="let item of items">
+        <div class="row  mb-2">
+            <div class="col-4 text-center align-self-center">
+                <h5>{{item.name}}</h5>
+                <p class="price py-2 text-center"><b>{{item.price*item.quantity | currency}}</b></p>
+            </div>
+            <div class="col-4 align-self-center text-center">
+                <p class="mb-0">
+                    <a (click)="decreaseItem(item)"><i class="bi bi-dash-lg me-2 align-self-center"></i></a>
+                    <span class="fs-3">{{item.quantity}}</span>
+                    <a (click)="increaseItem(item)"><i class="bi bi-plus-lg ms-2"></i></a>
+                </p>
+                <p class="mt-0"><a (click)="removeItem(item)" class="text-danger">remove</a></p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="{{item.img}}" width="300" class="cart-image">
+            </div>
 
-    <div class="row row-cols-1 row-cols-md-2 justify-content-between" *ngFor="let item of items">
-        <div class="col-4 text-center align-self-center">
-            <h5>{{item.name}}</h5>
-            <p class="price py-2 text-center"><b>{{total | currency}}</b></p>
         </div>
-        <div class="col-8 align-self-end">
-            <img src="{{item.img}}" width="300" height="300" class="cart-image">
-        </div>
+        <hr>
     </div>
+
+    <!-- <div class="row  mb-2">
+        <div class="col-4 text-center align-self-center">
+            <h5>nova</h5>
+            <p class="price py-2 text-center"><b>$ 40.00</b></p>
+        </div>
+        <div class="col-4 align-self-center text-center">
+            <p> quantity</p>
+            <p><a>delete</a></p>
+        </div>
+        <div class="col-4 text-center">
+            <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80" class="cart-image">
+        </div>
+
+    </div>
+    <hr> -->
 
 
 
@@ -45,7 +72,7 @@
         <!--Order info-->
         <div class="d-flex justify-content-center align-items-baseline">
             <p class="text-secondary me-2">Order total</p>
-            <p class="me-2 fs-5">{{total | currency}}</p>
+            <p class="me-2 fs-5">{{total| currency}}</p>
             <p class="text-secondary">free delivery</p>
         </div>
         <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">

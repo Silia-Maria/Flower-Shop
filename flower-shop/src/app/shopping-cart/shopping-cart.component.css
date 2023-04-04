@@ -1,6 +1,8 @@
 /* What's in the Cart */
 
 .cart-image {
+    width: 70%;
+    height: 60vh;
     object-fit: cover;
 }
 

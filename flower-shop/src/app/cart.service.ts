@@ -6,10 +6,12 @@ import { Idflowers } from './Idflowers';
 })
 export class CartService {
   items:Idflowers [] = [];
+  
 
   constructor() { }
 
   addToCart(flower:Idflowers) {
+    flower.quantity = 1;
     this.items.push(flower);
   }
 
@@ -21,11 +23,17 @@ export class CartService {
     this.items = [];
     return this.items;
   }
+
+   updateQuantity(item: Idflowers, quantity:number) {
+    item.quantity = quantity;
+  }
   result () {
     let total = 0;
     for(let item of this.items) {
-      total += item.price;
+      total += item.price*item.quantity;
     }
     return total;
   }
+
+ 
 }

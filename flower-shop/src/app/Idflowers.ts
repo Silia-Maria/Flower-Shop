@@ -5,4 +5,6 @@ export interface Idflowers {
     inside: string;
     img: string;
     type: string;
+    bestseller: boolean;
+    quantity: number;
 }
