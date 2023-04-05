@@ -1,19 +1,77 @@
-/* other hero image for swiper
+    /* other hero image for swiper
 https://images.unsplash.com/photo-1529066663606-c3a09451acd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=884&q=80 */
-
-.hero {
-    width: 75vw;
-    height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1621096277348-67e8dea44833?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80);
-    background-position: 0 50%;
-    background-size: cover;
-}
-
-.hero-text {
-    width: 35vw;
-}
-
-.hero-text {
-    position: relative;
-    top: 25%;
-}
+    
+    .hero {
+        width: 75vw;
+        height: 100vh;
+        background-image: url(https://images.unsplash.com/photo-1621096277348-67e8dea44833?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80);
+        background-position: 0 45%;
+        background-size: cover;
+    }
+    
+    .hero-text {
+        width: 35vw;
+    }
+    
+    .hero-text {
+        position: relative;
+        top: 25%;
+    }
+    
+    .background-color {
+        background-color: #ece4db;
+    }
+    
+    .background {
+        position: relative;
+        height: 80vh;
+    }
+    
+    .text {
+        border: 0.5px solid black;
+        position: absolute;
+        right: 18%;
+        top: 30%;
+        width: 30%;
+        padding: 2em 2em 5em 2em;
+    }
+    
+    .save-date-image img {
+        position: absolute;
+        left: 20%;
+        width: 40%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* .card {
+        width: 80%;
+        height: 80%;
+    }
+    
+    .card img {
+        object-fit: cover;
+    }
+    
+    .card {
+        border-bottom: 0 !important;
+    } */
+    /* try something */
+    
+    .right {
+        width: 50%;
+    }
+    
+    .bestseller-image img {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+    }
+    
+    .names {
+        position: relative;
+        top: 15%;
+    }
+    
+    .names h4 a:hover {
+        font-style: italic;
+    }

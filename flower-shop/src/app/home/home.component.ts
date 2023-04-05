@@ -9,10 +9,27 @@ import { Idflowers } from '../Idflowers';
 })
 export class HomeComponent implements OnInit {
   flowers: Idflowers [] = flowers;
+  bestsellers: Idflowers []= this.flowers.filter(flower => flower.bestseller === true);
+  displayedImage: string = this.bestsellers[0].img;
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.bestsellers = this.flowers.filter(flower => flower.bestseller === true);
+    this.displayedImage = this.bestsellers[0].img;
   }
+
+  onMouseEnter(imageName: string) {
+    const matchingFlower = this.flowers.find(flower => flower.name === imageName && flower.bestseller === true);
+    if(matchingFlower !== undefined) {
+      this.displayedImage = matchingFlower.img;
+    }
+  }
+
+  onMouseLeave() {
+    this.displayedImage = this.bestsellers[0].img;
+  }
+  
 
 }
