@@ -11,8 +11,6 @@ import { CartService } from '../cart.service';
 })
 export class FlowersComponent implements OnInit {
 flowers: Idflowers [] = flowers;
-public flowersList: any;
-// public filterType: any;
 filterType = this.flowers;
 
 
@@ -20,7 +18,6 @@ filterType = this.flowers;
 
   }
   addToCart (flower: Idflowers) {
-    window.alert("successfully added to Shopping Cart!");
     this.cartService.addToCart(flower);
   }
 
@@ -29,14 +26,6 @@ filterType = this.flowers;
 
   }
 
-// filter(type:string) {
-//   this.filterType = this.flowers
-//   .filter((a:any)=> {
-//     if(a.type == type || type == '') {
-//       return a;
-//     } 
-//   })
-// }
 
 filter (type: string) {
   if (type === '') {
@@ -46,7 +35,4 @@ filter (type: string) {
   }
 }
 
-// filterFlowers(type: string) {
-//   return this.flowers.filter(flower => flower.type === type);
-// }
 }

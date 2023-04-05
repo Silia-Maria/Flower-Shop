@@ -1,4 +1,5 @@
 export const flowers = [{
+    id: 1,
     name: "Holly",
     price: 30,
     description: "You know that moment when the morning sun starts to seep through the window? When the day is young, fresh, still. Holly captures all those feelings with her seasonal yellow tulips & vibrant alstroemeria.",
@@ -10,6 +11,7 @@ export const flowers = [{
 },
 {
     name: "Nova",
+    id: 2,
     price: 38,
     description: "Flower arranging is so soul soothing. And these pure-white blooms make it extra zen.",
     inside: "17 stems including white roses (that symbolise affection), snapdragons, asters and greenbells.",
@@ -19,6 +21,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Daisy",
+    id: 3,
     price: 40,
     description: "A quintessential Liberty floral that whisks you away to a dreamy cottage garden, it pairs perfectly with Daisy`s soft pink and honey-gold roses. ",
     inside: "18 stems including snapdragons, statice, roses, pistache, chrysanthemums and sweet williams.",
@@ -28,6 +31,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Marry",
+    id: 4,
     price: 32,
     description: "There are few things more relaxing than sitting outside in nature. With wildflowers all around you. And delicate grass stems gently brushing your skin.",
     inside: "47 Dried stems including spray roses, poppy seed heads, lavender and dried linum.",
@@ -37,6 +41,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Millie",
+    id: 5,
     price: 40,
     description: "You know that flicker of excitement you get when you notice the days finally getting longer? Unwrapping our Millie feels just like that. ",
     inside: "24 stems including sunflowers, carnations, asters, craspedia, roses, limonium and solidago.",
@@ -46,6 +51,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Phoebe",
+    id: 6,
     price: 45,
     description: "A retro-pop medley of wild, vibrant hues, a dazzle of hot coral roses, indigo limonium, and daisy-like asters, she’s the life and soul of the party.",
     inside: "20 stems including roses, hypericum berries, asters, alstroemeria, limonium and dianthus.",
@@ -55,6 +61,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Yui",
+    id: 7,
     price: 37,
     description: "Know someone who could use a relaxing do-nothing-day at home? Our Yui is here to help you treat them to one.",
     inside: "21 stems including stocks, carnations, pistache and limonium.",
@@ -64,6 +71,7 @@ export const flowers = [{
     quantity: 0,
 }, {
     name: "Minnie",
+    id: 8,
     price: 30,
     description: "If we could pack all the shades of an early summer sunrise into a box, it’d look a lot like this. Soft, yet vibrant yellows, peaches and lilacs, Minnie is here to wow.",
     inside: "44 Dried stems including helichrysum, statice, poppy seed heads, amaranthus, spray roses and lavender.",

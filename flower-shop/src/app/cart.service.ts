@@ -13,6 +13,7 @@ export class CartService {
   addToCart(flower:Idflowers) {
     flower.quantity = 1;
     this.items.push(flower);
+    console.log(this.items);
   }
 
   getItems () {
@@ -24,9 +25,10 @@ export class CartService {
     return this.items;
   }
 
-   updateQuantity(item: Idflowers, quantity:number) {
-    item.quantity = quantity;
+  updateQuantity(item: Idflowers, quantity:number) {
+  item.quantity = quantity;
   }
+  
   result () {
     let total = 0;
     for(let item of this.items) {
