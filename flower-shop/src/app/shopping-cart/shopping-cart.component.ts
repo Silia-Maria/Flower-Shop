@@ -29,17 +29,19 @@ recipientInfo = new FormGroup ({
     this.items = this.cartService.getItems();
   }
 
-  increaseItem(item: Idflowers) {
+  increaseQuantity(item: Idflowers) {
     item.quantity++;
     this.cartService.updateQuantity(item, item.quantity);
     this.cdr.detectChanges();
   }
 
-  decreaseItem(item: Idflowers) {
+  decreaseQuantity(item: Idflowers) {
     if(item.quantity > 1) {
       item.quantity--;
       this.cartService.updateQuantity(item, item.quantity);
       this.cdr.detectChanges();
+    } else if (item.quantity === 1) {
+      this.removeItem(item);
     }
   }
 

@@ -18,9 +18,9 @@
                 </div>
                 <div class="col-4 align-self-center text-center">
                     <div class="d-flex justify-content-center mb-0">
-                        <a (click)="increaseItem(item)" class="align-self-center"><i class="bi bi-plus-lg me-3"></i></a>
+                        <a (click)="increaseQuantity(item)" class="align-self-center"><i class="bi bi-plus-lg me-3"></i></a>
                         <span class="fs-3">{{item.quantity}}</span>
-                        <a (click)="decreaseItem(item)" class="align-self-center"><i class="bi bi-dash-lg ms-3"></i></a>
+                        <a (click)="decreaseQuantity(item)" class="align-self-center"><i class="bi bi-dash-lg ms-3"></i></a>
                     </div>
                     <p class="mt-0"><a (click)="removeItem(item)" class="text-danger">remove</a></p>
                 </div>
