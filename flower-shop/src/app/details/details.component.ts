@@ -10,22 +10,35 @@ import { flowers } from '../flowers';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  flowers: Idflowers [] = flowers;
   flower: Idflowers = {} as Idflowers;
   id: number = 0;
 
   constructor(private route: ActivatedRoute, private cartService: CartService) { }
 
+  // addToCart (flower: Idflowers){
+  //   if(flower) {
+  //     this.cartService.addToCart(flower);
+  //   }
+  // }
+
   addToCart() {
-    window.alert("Your Flowers have been successfully added to the cart!");
-    this.cartService.addToCart(this.flower);
+this.cartService.addToCart(this.flower);
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['flowerId'];
-      this.flower = flowers[this.id];
+      const flower = flowers.find(f => f.id === this.id);
+      if(flower) {
+        this.flower = flower;
+      }
 
     });
+   
   }
-
 }
+
+
+
+
