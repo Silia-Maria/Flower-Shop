@@ -7,3 +7,24 @@
 .logo-footer {
     font-size: 500%;
 }
+
+
+/*---------------
+Media queries
+-----------------*/
+
+@media screen and (max-width: 768px) {
+    .logo-footer {
+        font-size: 400%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-footer {
+        font-size: 300%;
+    }
+    .col,
+    .small {
+        text-align: start !important;
+    }
+}
