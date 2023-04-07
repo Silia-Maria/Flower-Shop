@@ -3,17 +3,24 @@
     <!--Header-->
     <div class="d-flex">
         <h3 class="flex-fill logo-color">{{flower.name}}</h3>
-        <h5 class="align-self-center me-4 mb-0">Total: {{flower.price | currency}}</h5>
-        <button class="my-button me-4 logo-color" (click)="addToCart()" routerLink="/cart">Send</button>
+        <h5 class="align-self-center me-4 mb-0 big-screen-send">Total: {{flower.price | currency}}</h5>
+        <button class="my-button me-4 logo-color big-screen-send" (click)="addToCart()" routerLink="/cart">Send</button>
         <a class="back" routerLink="/flowers"><i class="fa-solid fa-x fs-3 text-secondary"></i></a>
     </div>
     <hr>
     <!--Content-->
-    <div class="row row-cols-1 row-cols-lg-2">
+    <div class="row row-cols-1 row-cols-md-2">
         <div class="left mb-3">
-            <img src="{{flower.img}}">
+            <img src="{{flower.img}}" alt="{{flower.name}}">
         </div>
         <div class="left">
+            <div class="small-screen-send">
+                <div class="d-flex justify-content-between mb-2">
+                    <h3>{{flower.price | currency}}</h3>
+                    <button class="my-button  logo-color" (click)="addToCart()" routerLink="/cart">Send</button>
+                </div>
+                <hr>
+            </div>
             <h5>About</h5>
             <p>{{flower.description}}</p>
             <h6>What's in the box?</h6>

@@ -11,3 +11,34 @@
 .flower {
     transform: translate(0, -8px);
 }
+
+.small-screen-send {
+    display: none;
+}
+
+
+/* 
+---------------
+media queries 
+----------------
+*/
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+    .left img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left img {
+        width: 100%;
+    }
+    .small-screen-send {
+        display: block;
+    }
+    .big-screen-send {
+        display: none;
+    }
+}
