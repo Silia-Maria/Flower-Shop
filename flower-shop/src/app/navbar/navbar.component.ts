@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  // @Output() filterType = new EventEmitter<string>();
+
+  // filterByType (type: string) {
+  // this.filterType.emit(type);
+  // }
   
 
   constructor() { }

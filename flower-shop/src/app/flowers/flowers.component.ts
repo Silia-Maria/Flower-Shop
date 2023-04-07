@@ -13,7 +13,6 @@ export class FlowersComponent implements OnInit {
 flowers: Idflowers [] = flowers;
 filterType = this.flowers;
 
-
   constructor(private cartService: CartService) { 
 
   }
@@ -21,18 +20,17 @@ filterType = this.flowers;
     this.cartService.addToCart(flower);
   }
 
-  ngOnInit(): void {
-   
+  filter (type: string) {
+    if (type === '') {
+      this.filterType = this.flowers;
+    } else {
+      this.filterType = this.flowers.filter((flower) => flower.type === type);
+    }
+  }
 
+  ngOnInit(): void { 
   }
 
 
-filter (type: string) {
-  if (type === '') {
-    this.filterType = this.flowers;
-  } else {
-    this.filterType = this.flowers.filter((flower) => flower.type === type);
-  }
-}
 
 }

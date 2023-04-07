@@ -79,6 +79,18 @@ export const flowers = [{
     type: "Dried flowers",
     bestseller: false,
     quantity: 0,
+},
+{
+    name: "Bliss",
+    id: 9,
+    price: 42,
+    description: "Know someone who’s missing out on a spring getaway this year? We can’t promise you all-day sunshine, but this bouquet is sure to bring a breath of fresh air..",
+    inside: "18 stems including softly scented freesias, sweet williams, tulips and meadowy foliage.",
+    img: "https://images.unsplash.com/photo-1610841802859-94794ea50e1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+    type: "Hand-tied flowers",
+    bestseller: false,
+    quantity: 0,
 }
+
 
 ];

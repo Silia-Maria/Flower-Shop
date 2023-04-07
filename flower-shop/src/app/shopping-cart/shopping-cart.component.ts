@@ -25,6 +25,8 @@ recipientInfo = new FormGroup ({
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    console.log(this.items);
+    
   }
 
   increaseQuantity(item: Idflowers) {
@@ -63,5 +65,7 @@ recipientInfo = new FormGroup ({
 orderSent () {
   this.recipientInfo.reset;
   this.cartService.clearCart();
+  this.items = [];
+ 
 }
 }
