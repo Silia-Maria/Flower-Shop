@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Idflowers } from '../Idflowers';
 import { CartService } from '../cart.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -63,6 +64,12 @@ recipientInfo = new FormGroup ({
 
 
 orderSent () {
+  Swal.fire({
+    title: 'Thank you for choosing flùr!',
+    text: 'Your Order was successfully placed.', 
+    icon: 'success',
+
+  })
   this.recipientInfo.reset;
   this.cartService.clearCart();
   this.items = [];
