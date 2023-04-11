@@ -10,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LottieAnimationViewModule } from 'ng-lottie';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LottieAnimationViewModule.forRoot()
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
