@@ -1,6 +1,6 @@
 <div class="container mb-3">
     <div class="nav-bar-bg"></div>
-    <!--Order info-->
+
     <!--If Cart is empty-->
     <div *ngIf="items.length === 0" class="text-center empty-cart">
 
@@ -10,6 +10,7 @@
             <button class="my-button mt-3"><a routerLink="/flowers">start shopping</a></button>
         </div>
     </div>
+
     <!--If Cart is not empty-->
     <div *ngIf="items.length > 0">
         <div *ngFor="let item of items">
@@ -72,14 +73,14 @@
 
                         <!-- send button -->
                         <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-                            <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()">Send</button>
+                            <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()" routerLink="/">Send</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Total Section-->
+        <!-- order Total Section on page-->
         <div class="d-flex justify-content-between align-items-center my-2 total">
             <a routerLink="/flowers" class="text-secondary"><i class="bi bi-arrow-left me-2"></i>Continue shopping</a>
             <h4 class="mb-0">Subtotal: {{total | currency}}</h4>

@@ -1,8 +1,13 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { Idflowers } from '../Idflowers';
 import { CartService } from '../cart.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { LottieAnimationViewModule } from 'ng-lottie';
+import { LottieAnimationViewComponent } from 'ng-lottie';
+import * as Lottie from 'lottie-web';
+
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -15,14 +20,16 @@ export class ShoppingCartComponent implements OnInit {
     return this.cartService.result();
   }
 
- 
+// delivery form info
 recipientInfo = new FormGroup ({
   name: new FormControl("", Validators.required),
   address: new FormControl ("", Validators.required),
   deliveryDate: new FormControl ("", Validators.required),
   message: new FormControl ("")
 }) 
-  constructor(private cartService: CartService, private cdr: ChangeDetectorRef ) { }
+
+  constructor(private cartService: CartService, private cdr: ChangeDetectorRef ) { 
+  }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
@@ -30,12 +37,14 @@ recipientInfo = new FormGroup ({
     
   }
 
+  // increase Quantity 
   increaseQuantity(item: Idflowers) {
     item.quantity++;
     this.cartService.updateQuantity(item, item.quantity);
     this.cdr.detectChanges();
   }
 
+  // decrease Quantity
   decreaseQuantity(item: Idflowers) {
     if(item.quantity > 1) {
       item.quantity--;
@@ -46,6 +55,7 @@ recipientInfo = new FormGroup ({
     }
   }
 
+  // Delete Items from cart
   removeItem (item: Idflowers) {
     const index = this.items.indexOf(item);
     if(index !== -1) {
@@ -53,7 +63,7 @@ recipientInfo = new FormGroup ({
     }
   }
   
-
+// Fill Order details Method
  onSubmit () {
   if(this.recipientInfo.valid) {
     console.log(this.recipientInfo);
@@ -62,15 +72,14 @@ recipientInfo = new FormGroup ({
   }
  }
 
-
+// Send Method
 orderSent () {
   Swal.fire({
-    title: 'Thank you for choosing flùr!',
+    title: '<img class="sweet-alert-img"src="/assets/images/willow.png"><h2>Thank you for choosing flùr!</h2>',
     text: 'Your Order was successfully placed.', 
-    icon: 'success',
-
-  })
-  this.recipientInfo.reset;
+    customClass: 'my-swal',
+  });
+  this.recipientInfo.reset();
   this.cartService.clearCart();
   this.items = [];
  

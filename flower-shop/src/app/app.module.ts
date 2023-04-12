@@ -13,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LottieAnimationViewModule } from 'ng-lottie';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +27,8 @@ import { LottieAnimationViewModule } from 'ng-lottie';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    LottieAnimationViewModule.forRoot()
+    LottieAnimationViewModule.forRoot(),
+    
    
   ],
   providers: [],
