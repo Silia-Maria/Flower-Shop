@@ -1,7 +1,68 @@
+/*---------------
+ Filter Nav-links
+-----------------*/
+
+.flower-filter a:hover {
+    color: #3c6e71;
+}
+
+
+/*---------------
+ Cards
+-----------------*/
+
+.card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}
+
+.card-body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .card-title:hover {
     font-style: italic;
 }
 
-.flower-filter a:hover {
-    color: #3c6e71;
+.card-image {
+    height: 60vh;
+    object-fit: cover;
+}
+
+
+/* 
+-------------------
+Show more button
+-------------------
+ */
+
+.showMore {
+    display: inline-block;
+    /* width: 13%; */
+    border: 1px solid black;
+    padding: 1em 1.7em;
+    font-weight: 300;
+}
+
+
+/* 
+-------------------
+Media Queries
+-------------------
+ */
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 375px) {
+    .card-image {
+        height: 50vh;
+    }
 }

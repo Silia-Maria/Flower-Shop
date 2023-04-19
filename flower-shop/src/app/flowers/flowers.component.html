@@ -1,7 +1,7 @@
 <div class="container">
     <div class="nav-bar-bg"></div>
-    <!--Header-->
 
+    <!--Header with Filter Nav-->
     <h1 class="text-center"><a (click)="filter('')">Flowers</a></h1>
     <div class="d-flex justify-content-center border-bottom border-dark pb-2 flower-filter">
         <a class="me-3" (click)="filter('Hand-tied flowers')">Hand-tied bouquets</a>
@@ -9,11 +9,11 @@
         <a (click)="filter('Luxury flowers')">Luxury flowers</a>
     </div>
 
-    <!--Flower Section-->
+    <!--Flower Cards Section-->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-3">
-        <div class="col" *ngFor="let flower of filterType, index as flowerId">
+        <div class="col" *ngFor="let flower of visibleFlowers, index as flowerId">
             <div class="card h-100">
-                <img src="{{flower.img}}" alt="..." class="h-100">
+                <img src="{{flower.img}}" alt="{{flower.name}}" class="card-image">
                 <div class="card-body">
                     <h5 class="card-title"><a routerLink="/details/{{flower.id}}" class="logo-color">{{flower.name}}</a></h5>
                     <p class="card-text text-secondary">{{flower.type}}</p>
@@ -24,5 +24,15 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!--Number of products costumer has seen-->
+    <div class="text-center">
+        <p class="small text-secondary">You've viewed {{visibleFlowers.length}} of {{filterType.length}} products </p>
+    </div>
+
+    <!--Show More button-->
+    <div class="text-center my-3" *ngIf="numVisible < filterType.length">
+        <a class="showMore text-uppercase" (click)="toggleShowMore()">Show More</a>
     </div>
 </div>
