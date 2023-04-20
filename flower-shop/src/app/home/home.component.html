@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<!-- Section -->
+<!-- Section New ways-->
 <div class="background-color">
     <div class="container">
         <div class="text-center py-3 py-md-5 ">
@@ -34,19 +34,6 @@
         </div>
     </div>
 </div>
-<!--Try something-->
-<!-- <div class="background row">
-    <div class="col-6 text align-items-center">
-        <h3 class="mb-3">Remember what's important</h3>
-        <p>Set reminders for birthdays, anniversaries or times they might need some extra support.</p>
-        <button class="my-button logo-color">Save the date</button>
-
-    </div>
-    <div class="save-date-image col-6"></div>
-</div> -->
-
-
-
 
 <!--Bestsellers-->
 <div class="border-bottom border-dark border-top border-black">
@@ -55,12 +42,18 @@
             <div class="bestseller-image col-6">
                 <img [src]="displayedImage" alt="bestseller">
             </div>
-
-            <!-- Names with hover effect-->
+            <!-- Names with effect (bigger screens: hover, smaller screens: click)-->
             <div class="text-end right col-6">
                 <h3 class="mb-5 heading">Meet our Bestsellers</h3>
                 <div class="ms-5 names">
-                    <h4 *ngFor="let bestseller of bestsellers" class="border-bottom border-dark pe-2" [attr.id]="'achnor' + bestseller.id"><a (mouseenter)="onMouseEnter(bestseller.name)" (mouseleave)="onMouseLeave()" [routerLink]="'/details/' + bestseller.id" [queryParams]="{fromHome:true}">{{bestseller.name}}</a></h4>
+                    <h4 *ngFor="let bestseller of bestsellers" class="border-bottom border-dark pe-2" [attr.id]="'achnor' + bestseller.id">
+                        <!--For Mobiles: click-->
+                        <a *ngIf="isMobile; else hoverLink" (click)="onMobileClick(bestseller.name)">{{bestseller.name}}</a>
+                        <!--Bigger screens: hover-->
+                        <ng-template #hoverLink>
+                            <a (mouseenter)="onMouseEnter(bestseller.name)" (mouseleave)="onMouseLeave()" [routerLink]="'/details/' + bestseller.id" [queryParams]="{fromHome:true}">{{bestseller.name}}</a>
+                        </ng-template>
+                    </h4>
                 </div>
             </div>
         </div>
