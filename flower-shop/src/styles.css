@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 
 /*---------------
  anchor links 
@@ -16,13 +21,13 @@ a:hover {
 
 
 /*---------------
-butttons
+buttton
 -----------------*/
 
 .my-button {
     background-color: #ffe5d9;
     border: 1px solid #3c6e71;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 0.5em 1em;
 }
 
@@ -30,7 +35,8 @@ butttons
     color: #3c6e71;
 }
 
-.my-button a:hover {
+.my-button a:hover,
+.my-button:hover {
     font-style: italic;
 }
 
@@ -49,17 +55,62 @@ Green color
 
 
 /*---------------
- Cards
+Nav-background
 -----------------*/
-
-.card {
-    border-radius: 0 !important;
-    border-left: none !important;
-    border-top: none !important;
-    border-right: none !important;
-}
 
 .nav-bar-bg {
     width: 100%;
     height: 100px;
+}
+
+
+/*---------------
+Sweet alert
+-----------------*/
+
+.swal2-confirm {
+    background-color: #ffe5d9 !important;
+    color: #3c6e71 !important;
+    border: 0.5px solid #3c6e71 !important;
+    border-radius: 0 !important;
+}
+
+.swal2-title {
+    color: #3c6e71 !important;
+}
+
+.content .nav-expanded {
+    margin-top: 60px;
+}
+
+.sweet-alert-img {
+    width: 20%;
+    margin-bottom: 0.5em;
+}
+
+.swal2-html-container {
+    margin: 0 !important;
+}
+
+
+/*---------------
+Media queries
+-----------------*/
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 75%;
+    }
 }
