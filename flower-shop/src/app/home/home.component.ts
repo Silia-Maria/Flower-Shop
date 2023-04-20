@@ -9,9 +9,12 @@ import { Idflowers } from '../Idflowers';
 })
 export class HomeComponent implements OnInit {
   flowers: Idflowers [] = flowers;
-  bestsellers: Idflowers []= this.flowers.filter(flower => flower.bestseller === true);
-  displayedImage: string = this.bestsellers[0].img;
 
+  // bestseller array
+  bestsellers: Idflowers []= this.flowers.filter(flower => flower.bestseller === true);
+
+  // default image bestseller[0]
+  displayedImage: string = '';
 
   constructor() { }
 
@@ -20,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.displayedImage = this.bestsellers[0].img;
   }
 
+  //Hover effect -> change image
   onMouseEnter(imageName: string) {
     const matchingFlower = this.flowers.find(flower => flower.name === imageName && flower.bestseller === true);
     if(matchingFlower !== undefined) {
@@ -27,9 +31,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // back to default image 
   onMouseLeave() {
-    this.displayedImage = this.bestsellers[0].img;
+    this.displayedImage;
   }
-  
-
 }

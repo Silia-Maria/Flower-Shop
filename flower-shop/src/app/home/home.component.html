@@ -1,54 +1,67 @@
 <!-- hero -->
-<div class="d-flex border-bottom border-dark">
-    <div class="hero"></div>
-    <div class="border-start border-dark">
+<div class="row border-bottom border-dark home">
+    <div class="hero col-8"></div>
+    <div class="border-start border-dark col-4">
         <div class="hero-text ps-3">
             <h1>Send flowers to your loved ones!</h1>
             <p class="mt-3">
                 Housewarmings. Birthdays. The official start of spring. You don’t always need a reason to care wildly. But just in case...
             </p>
-            <button class="my-button"><a routerLink="/flowers">Shop now</a></button></div>
+            <button class="my-button"><a routerLink="/flowers">Shop now</a></button>
+        </div>
     </div>
 </div>
+
+<!-- Section -->
 <div class="background-color">
     <div class="container">
-        <!-- Section -->
-
-        <div class="text-center mb-5 pt-5">
+        <div class="text-center py-3 py-md-5 ">
             <h3> New ways to show you care</h3>
             <p>The plant to warm a new home. The bunch to brighten a bad day. The note sent without an occasion. And more.</p>
         </div>
 
+    </div>
 
-        <!-- Section Remember whats important-->
-        <div class="background">
-            <div class="save-date-image">
-                <img src="https://images.unsplash.com/photo-1591056076251-514f3c9368a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQxfHxmbG93ZXIlMjBib3VxdWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
-            </div>
-            <div class="text text-center">
-                <h3 class="mb-3">Remember what's important</h3>
-                <p>Set reminders for birthdays, anniversaries or times they might need some extra support.</p>
-                <button class="my-button mt-3 logo-color">Save the date</button>
-            </div>
+    <!-- Section Remember whats important-->
+    <div class="background">
+        <div class="save-date-image">
+            <img src="https://images.unsplash.com/photo-1591056076251-514f3c9368a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQxfHxmbG93ZXIlMjBib3VxdWV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
         </div>
-
-
+        <div class="text ">
+            <h3 class="mb-3">Remember what's important</h3>
+            <p>Set reminders for birthdays, anniversaries or times they might need some extra support.</p>
+            <button class="my-button mt-3 logo-color">Save the date</button>
+        </div>
     </div>
 </div>
+<!--Try something-->
+<!-- <div class="background row">
+    <div class="col-6 text align-items-center">
+        <h3 class="mb-3">Remember what's important</h3>
+        <p>Set reminders for birthdays, anniversaries or times they might need some extra support.</p>
+        <button class="my-button logo-color">Save the date</button>
+
+    </div>
+    <div class="save-date-image col-6"></div>
+</div> -->
+
+
+
 
 <!--Bestsellers-->
-
 <div class="border-bottom border-dark border-top border-black">
-    <div class="container d-flex justify-content-between my-5 " *ngIf="bestsellers.length >0">
-        <div class="bestseller-image">
-            <img [src]="displayedImage">
-        </div>
-        <div class="text-end right">
-            <h3 class="mb-5 heading">Meet our Bestsellers</h3>
-            <div class="ms-5 names">
+    <div class="container justify-content-between my-5 " *ngIf="bestsellers.length >0">
+        <div class="row">
+            <div class="bestseller-image col-6">
+                <img [src]="displayedImage" alt="bestseller">
+            </div>
 
-                <h4 *ngFor="let bestseller of bestsellers" class="border-bottom border-dark pe-2" [attr.id]="'achnor' + bestseller.id"><a (mouseenter)="onMouseEnter(bestseller.name)" (mouseleave)="onMouseLeave()" [routerLink]="'/details/' + bestseller.id">{{bestseller.name}}</a></h4>
-
+            <!-- Names with hover effect-->
+            <div class="text-end right col-6">
+                <h3 class="mb-5 heading">Meet our Bestsellers</h3>
+                <div class="ms-5 names">
+                    <h4 *ngFor="let bestseller of bestsellers" class="border-bottom border-dark pe-2" [attr.id]="'achnor' + bestseller.id"><a (mouseenter)="onMouseEnter(bestseller.name)" (mouseleave)="onMouseLeave()" [routerLink]="'/details/' + bestseller.id" [queryParams]="{fromHome:true}">{{bestseller.name}}</a></h4>
+                </div>
             </div>
         </div>
     </div>
