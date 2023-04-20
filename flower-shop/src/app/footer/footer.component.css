@@ -27,4 +27,7 @@ Media queries
     .small {
         text-align: start !important;
     }
+    .col {
+        margin-bottom: 0.5em;
+    }
 }
