@@ -2,8 +2,32 @@
     font-size: 300%;
 }
 
+button .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+}
 
-/* .navbar {
-    background-color: transparent;
-    position: absolute;
-} */
+
+/* 
+-------------------
+Media Queries
+-------------------
+ */
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+    .nav-expanded {
+        padding-top: 70px;
+        transition: 0.3s ease-in-out;
+    }
+    .no-padding-top {
+        transition: 0.4s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-link img {
+        width: 17px;
+    }
+}
