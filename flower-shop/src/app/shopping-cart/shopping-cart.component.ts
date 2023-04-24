@@ -70,7 +70,7 @@ recipientInfo = new FormGroup ({
 // Send Method
 orderSent () {
   Swal.fire({
-    title: '<img class="sweet-alert-img"src="/assets/images/willow.png"><h2>Thank you for choosing flùr!</h2>',
+    title: '<img class="sweet-alert-img"src="assets/images/willow.png"><h2 class="heading-font">Thank you for choosing flùr!</h2>',
     text: 'Your Order was successfully placed.', 
     customClass: 'my-swal',
   });
