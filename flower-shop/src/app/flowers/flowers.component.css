@@ -42,7 +42,6 @@ Show more button
 
 .showMore {
     display: inline-block;
-    /* width: 13%; */
     border: 1px solid black;
     padding: 1em 1.7em;
     font-weight: 300;
@@ -54,12 +53,6 @@ Show more button
 Media Queries
 -------------------
  */
-
-@media screen and (max-width: 1024px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 480px) {}
 
 @media screen and (max-width: 375px) {
     .card-image {

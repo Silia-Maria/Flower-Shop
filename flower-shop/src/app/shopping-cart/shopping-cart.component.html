@@ -5,7 +5,7 @@
     <div *ngIf="items.length === 0" class="text-center empty-cart">
 
         <div class="empty-text">
-            <h3>Oops - your cart appears to be empty!</h3>
+            <h3 class="heading-font">Oops - your cart appears to be empty!</h3>
             <p>Show someone you care and send them flowers</p>
             <button class="my-button mt-3"><a routerLink="/flowers">start shopping</a></button>
         </div>
@@ -61,14 +61,14 @@
                             <h5>Add a free gift card</h5>
 
                             <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-                                <textarea name="message" id="" cols="30" rows="5" formControlName="message" placeholder="Write a personal message to your loved ones!" class="mx-0"></textarea>
+                                <textarea name="message" id="" cols="30" rows="5" formControlName="message" placeholder="Write a personal message!" class="mx-0"></textarea>
                             </form>
                         </div>
 
                         <!-- order total -->
                         <div class="mt-3">
-                            <p class="my-0">Order total: {{total| currency}}</p>
-                            <p class="text-secondary mb-3">free delivery</p>
+                            <h5 class="my-0">Order total: {{total| currency}}</h5>
+                            <p class="text-secondary mb-3">- free delivery -</p>
                         </div>
 
                         <!-- send button -->

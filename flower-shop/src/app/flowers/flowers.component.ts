@@ -34,7 +34,6 @@ numVisible: number = 9;
     } else {
       this.filterType = this.flowers.filter((flower) => flower.type === type);
     }
-    // neew line 38
     this.numVisible = this.getVisibleFlowersCount();
     this.visibleFlowers = this.filterType.slice(0, this.numVisible);
   }

@@ -2,7 +2,7 @@
     <div class="nav-bar-bg"></div>
 
     <!--Header with Filter Nav-->
-    <h1 class="text-center"><a (click)="filter('')">Flowers</a></h1>
+    <h1 class="text-center heading-font"><a (click)="filter('')">Flowers</a></h1>
     <div class="d-flex justify-content-center border-bottom border-dark pb-2 flower-filter">
         <a class="me-3" (click)="filter('Hand-tied flowers')">Hand-tied bouquets</a>
         <a class="me-3" (click)="filter('Dried flowers')">Dried flowers</a>
@@ -15,7 +15,7 @@
             <div class="card h-100">
                 <img src="{{flower.img}}" alt="{{flower.name}}" class="card-image">
                 <div class="card-body">
-                    <h5 class="card-title"><a routerLink="/details/{{flower.id}}" class="logo-color">{{flower.name}}</a></h5>
+                    <h5 class="card-title"><a routerLink="/details/{{flower.id}}" class="logo-color heading-font">{{flower.name}}</a></h5>
                     <p class="card-text text-secondary">{{flower.type}}</p>
                     <div class="d-flex justify-content-between align-items-baseline">
                         <p>{{flower.price | currency}}</p>

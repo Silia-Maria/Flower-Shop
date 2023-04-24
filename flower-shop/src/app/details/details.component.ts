@@ -16,9 +16,7 @@ export class DetailsComponent implements OnInit {
   id: number = 0;
   fromHome!: boolean;
   
-
   constructor(private route: ActivatedRoute, private cartService: CartService, private router: Router) { }
-
 
   addToCart() {
 this.cartService.addToCart(this.flower);

@@ -3,11 +3,6 @@ import { Idflowers } from '../Idflowers';
 import { CartService } from '../cart.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { LottieAnimationViewModule } from 'ng-lottie';
-import { LottieAnimationViewComponent } from 'ng-lottie';
-import * as Lottie from 'lottie-web';
-
-
 
 @Component({
   selector: 'app-shopping-cart',

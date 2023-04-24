@@ -7,6 +7,19 @@
 
 
 /*---------------
+Heading font 
+-----------------*/
+
+.heading-font {
+    /* font-family: 'Bodoni Moda', serif; */
+    /* font-family: 'Cormorant Garamond', serif; */
+    /* font-family: 'Manrope', sans-serif; */
+    /* font-family: 'Alumni Sans', sans-serif; */
+    font-family: 'Italiana', serif;
+}
+
+
+/*---------------
  anchor links 
 -----------------*/
 
