@@ -66,14 +66,14 @@
                         </div>
 
                         <!-- order total -->
-                        <div class="mt-3">
+                        <div class="mt-3 text-center">
                             <h5 class="my-0">Order total: {{total| currency}}</h5>
                             <p class="text-secondary mb-3">- free delivery -</p>
                         </div>
 
                         <!-- send button -->
-                        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()">
-                            <button class="my-button" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()" routerLink="/">Send</button>
+                        <form [formGroup]="recipientInfo" (ngSubmit)="onSubmit()" class="text-center">
+                            <button class="my-button finalBtn" type="reset" [disabled]="!recipientInfo.valid" (click)=" orderSent()" routerLink="/">Send</button>
                         </form>
                     </div>
                 </div>

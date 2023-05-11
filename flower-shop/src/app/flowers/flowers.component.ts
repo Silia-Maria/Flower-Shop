@@ -91,7 +91,7 @@ numVisible: number = 9;
       this.numVisible = Math.min(this.numVisible + 9, this.filterType.length);
     } 
     } else {
-     this.showMore = true;
+     this.showMore = false;
     }
     if (this.numVisible < this.filterType.length) {
       this.showMore = false;

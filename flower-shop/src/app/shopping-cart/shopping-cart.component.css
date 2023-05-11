@@ -59,6 +59,25 @@ label {
     margin-right: 4rem;
 }
 
+label input[type="date"] {
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+}
+
+
+/* Final Send button not disabled */
+
+[type=reset]:not(:disabled),
+button:not(:disabled) {
+    color: #3c6e71;
+}
+
+.finalBtn {
+    width: 100%;
+}
+
 
 /* 
 -------------------
