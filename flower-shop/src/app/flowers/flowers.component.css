@@ -54,6 +54,12 @@ Media Queries
 -------------------
  */
 
+@media screen and (max-width: 480px) {
+    .card-body h5 {
+        font-size: 180%;
+    }
+}
+
 @media screen and (max-width: 375px) {
     .card-image {
         height: 50vh;
